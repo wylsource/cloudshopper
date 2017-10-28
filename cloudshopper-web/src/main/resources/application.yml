@@ -1,7 +1,11 @@
 server:
   port: 7900
+  context-path: /
 
 spring:
+  mvc:
+    view:
+      suffix: .html
   application:
     name: cloudshopper-web
 eureka:
