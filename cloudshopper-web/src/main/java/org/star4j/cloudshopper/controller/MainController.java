@@ -21,7 +21,7 @@ import java.util.List;
 public class MainController {
 
     @RequestMapping("/main/{id}")
-    public List<ShopAdmin> main(@PathVariable("id") long id){
+    public List<ShopAdmin> main(@PathVariable("id") Integer id){
         ShopAdmin shopAdmin = new ShopAdmin();
         shopAdmin.setAdminId(id);
         shopAdmin.setAdminName("张三");
