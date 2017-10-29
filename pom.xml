@@ -40,6 +40,7 @@
 		<pagehelper-spring-boot>1.2.0</pagehelper-spring-boot>
 		<druid-spring-boot>1.1.5</druid-spring-boot>
 		<mybatis-generator>1.3.2</mybatis-generator>
+		<org.star4j.cloudshopper>0.0.1-SNAPSHOT</org.star4j.cloudshopper>
 	</properties>
 
 	<dependencies>
@@ -54,6 +55,11 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
 
 	</dependencies>

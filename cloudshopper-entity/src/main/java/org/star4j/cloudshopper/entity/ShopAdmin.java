@@ -1,6 +1,8 @@
 package org.star4j.cloudshopper.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,9 +14,11 @@ import java.util.Date;
  * @Modified By:
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ShopAdmin implements Serializable{
 
-    private Integer adminId; //主键 ID
+    private Long adminId; //主键 ID
 
     private String adminName; //管理员账号(唯一)
 
@@ -28,16 +32,4 @@ public class ShopAdmin implements Serializable{
 
     private Date createTime; //创建时间
 
-    public ShopAdmin() {
-    }
-
-    public ShopAdmin(Integer adminId, String adminName, String adminPass, String adminEmail, Date loginTime, String loginIp, Date createTime) {
-        this.adminId = adminId;
-        this.adminName = adminName;
-        this.adminPass = adminPass;
-        this.adminEmail = adminEmail;
-        this.loginTime = loginTime;
-        this.loginIp = loginIp;
-        this.createTime = createTime;
-    }
 }

@@ -17,6 +17,14 @@
 	</parent>
 
 	<dependencies>
+
+		<!-- 实体依赖 -->
+		<dependency>
+			<groupId>org.star4j.cloudshopper</groupId>
+			<artifactId>cloudshopper-entity</artifactId>
+			<version>${org.star4j.cloudshopper}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -32,6 +40,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>

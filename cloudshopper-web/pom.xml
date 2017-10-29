@@ -22,14 +22,14 @@
 		<dependency>
 			<groupId>org.star4j.cloudshopper</groupId>
 			<artifactId>cloudshopper-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${org.star4j.cloudshopper}</version>
 		</dependency>
 
 		<!-- 实体依赖 -->
 		<dependency>
 			<groupId>org.star4j.cloudshopper</groupId>
 			<artifactId>cloudshopper-entity</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${org.star4j.cloudshopper}</version>
 		</dependency>
 
 		<dependency>
