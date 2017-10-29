@@ -1,0 +1,13 @@
+server:
+  port: 7904
+
+spring:
+  application:
+    name: cloudshopper-order
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}

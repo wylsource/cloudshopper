@@ -2,7 +2,7 @@ package org.star4j.cloudshopper.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
-import org.star4j.cloudshopper.entity.ShopAdmin;
+import org.star4j.cloudshopper.entity.Entity.ShopAdmin;
 import org.star4j.cloudshopper.service.ShopAdminService;
 
 /**

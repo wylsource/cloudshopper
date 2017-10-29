@@ -48,7 +48,8 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8761/eureka
+    ## http://admin:admin@localhost:8761/eureka
+      defaultZone: http://ljm:_ljming@39.106.4.242:5001/eureka
   instance:
     prefer-ip-address: true
     instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}

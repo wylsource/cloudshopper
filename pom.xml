@@ -24,6 +24,10 @@
 		<module>cloudshopper-common</module>
 		<module>cloudshopper-user</module>
 		<module>cloudshopper-tools</module>
+		<module>cloudshopper-order</module>
+		<module>cloudshopper-pay</module>
+		<module>cloudshopper-entity</module>
+		<module>cloudshopper-api</module>
 	</modules>
 
 	<properties>

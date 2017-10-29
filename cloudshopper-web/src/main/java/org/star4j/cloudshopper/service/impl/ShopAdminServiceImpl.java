@@ -3,11 +3,9 @@ package org.star4j.cloudshopper.service.impl;
 import com.github.pagehelper.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.star4j.cloudshopper.entity.ShopAdmin;
+import org.star4j.cloudshopper.entity.Entity.ShopAdmin;
 import org.star4j.cloudshopper.mapper.ShopAdminMapper;
 import org.star4j.cloudshopper.service.ShopAdminService;
-
-import java.util.List;
 
 /**
  * @Author: WuYL
