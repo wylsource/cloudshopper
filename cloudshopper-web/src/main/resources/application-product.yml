@@ -1,0 +1,81 @@
+server:
+  port: 7900
+  context-path: /
+
+spring:
+  mvc:
+    view:
+      suffix: .html
+  application:
+    name: cloudshopper-web
+  datasource:
+  ####### spring boot 整合 druid start #######
+    druid:
+      url: jdbc:mysql://rm-uf6za9r9202wh92l7o.mysql.rds.aliyuncs.com:3306/cloudshpper?characterEncoding=utf8&useSSL=true
+      username: root
+      password: Wuyulong55
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      # 初始化连接数大小
+      initial-size: 2
+      # 最小连接数
+      min-idle: 2
+      # 最大连接数
+      max-active: 30
+      web-stat-filter:
+        enabled: true
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+        enabled: true
+      #配置获取连接等待超时的时间
+      max-wait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filter: stat,wall,log4j
+      # 合并多个DruidDataSource的监控数据
+      use-global-data-source-stat: true
+  ####### spring boot 整合 druid end #######
+eureka:
+  # 设置环境标识
+  environment: product
+  client:
+    serviceUrl:
+    ## http://admin:admin@localhost:8761/eureka
+    ## http://ljm:_ljming@39.106.4.242:5001/eureka
+      defaultZone: http://admin:admin@localhost:8761/eureka
+    # 开启健康检查（需要 spring-boot-starter-actuator）
+    healthcheck:
+          enabled: true
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${spring.cloud.client.ipAddress}:${server.port}}
+    # 租期更新时间间隔（默认30毫秒）
+    lease-renewal-interval-in-seconds: 10
+    # 租期到期时间（默认90毫秒）
+    lease-expiration-duration-in-seconds: 30
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  row-bounds-with-count: true
+  params: count=countSql
+
+
+
+
+

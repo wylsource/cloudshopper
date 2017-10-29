@@ -1,0 +1,15 @@
+server:
+  port: 7906
+
+spring:
+  application:
+    name: cloudshopper-Entity
+eureka:
+  # 设置环境标识
+  environment: dev
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${spring.cloud.client.ipAddress}:${server.port}}

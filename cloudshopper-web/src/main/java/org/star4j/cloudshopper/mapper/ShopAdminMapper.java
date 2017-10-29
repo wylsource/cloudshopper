@@ -2,7 +2,7 @@ package org.star4j.cloudshopper.mapper;
 
 
 import com.github.pagehelper.Page;
-import org.star4j.cloudshopper.entity.Entity.ShopAdmin;
+import org.star4j.cloudshopper.entity.ShopAdmin;
 
 public interface ShopAdminMapper {
 

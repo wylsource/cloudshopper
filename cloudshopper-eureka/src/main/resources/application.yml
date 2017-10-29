@@ -1,17 +1,4 @@
-server:
-  port: 8761
+spring:
+  profiles:
+    active: dev
 
-security:
-  basic:
-    enabled: true
-  user:
-      name: admin # login username
-      password: admin # login password
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://admin:admin@localhost:8761/eureka
-    healthcheck:
-      enabled: true # ½¡¿µ¼ì²é

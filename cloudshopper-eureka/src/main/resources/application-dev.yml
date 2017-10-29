@@ -1,0 +1,18 @@
+server:
+  port: 8761
+
+security:
+  basic:
+    enabled: true
+  user:
+      name: admin # login username
+      password: admin # login password
+eureka:
+  datacenter: cloud
+  # 设置环境标识
+  environment: dev
+  server:
+      # 关闭自我保护
+      enable-self-preservation: false
+      # 设置清理节点时间间隔（默认60*1000 单位毫秒）
+      eviction-interval-timer-in-ms: 30000

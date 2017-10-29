@@ -1,7 +1,7 @@
 package org.star4j.cloudshopper.service;
 
 import com.github.pagehelper.Page;
-import org.star4j.cloudshopper.entity.Entity.ShopAdmin;
+import org.star4j.cloudshopper.entity.ShopAdmin;
 
 /**
  * @Author: WuYL
