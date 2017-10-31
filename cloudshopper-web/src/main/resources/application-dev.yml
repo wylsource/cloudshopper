@@ -76,6 +76,8 @@ pagehelper:
   params: count=countSql
 
 
-
+feign:
+  hystrix:
+    enabled: true
 
 

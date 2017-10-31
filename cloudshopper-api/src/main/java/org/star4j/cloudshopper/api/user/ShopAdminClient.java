@@ -4,7 +4,9 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.star4j.cloudshopper.entity.ShopAdmin;
+import org.star4j.cloudshopper.fallback.user.ShopAdminHystrixClientFallback;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +15,7 @@ import java.util.List;
  * @Date: Create in 2017/10/29 17:10
  * @Modified By:
  */
-@FeignClient("cloudshopper-user")
+@FeignClient(name = "cloudshopper-user", fallback = ShopAdminHystrixClientFallback.class)
 public interface ShopAdminClient {
 
     /**
@@ -23,4 +25,5 @@ public interface ShopAdminClient {
      */
     @GetMapping("/user/shopadmin/selectWithPage/{id}")
     List<ShopAdmin> selectShopAdminWithPage(@PathVariable("id") Long id);
+
 }
