@@ -28,6 +28,7 @@
 		<module>cloudshopper-pay</module>
 		<module>cloudshopper-entity</module>
 		<module>cloudshopper-api</module>
+		<module>cloudshopper-zuul</module>
 	</modules>
 
 	<properties>

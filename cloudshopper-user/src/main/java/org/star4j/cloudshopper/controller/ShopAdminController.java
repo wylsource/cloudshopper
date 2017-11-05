@@ -16,7 +16,7 @@ import java.util.List;
  * @Modified By:
  */
 @RestController
-@RequestMapping("/user/shopadmin")
+@RequestMapping("/shopadmin")
 public class ShopAdminController {
 
     @Autowired

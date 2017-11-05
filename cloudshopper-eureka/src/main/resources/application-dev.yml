@@ -16,3 +16,6 @@ eureka:
       enable-self-preservation: false
       # 设置清理节点时间间隔（默认60*1000 单位毫秒）
       eviction-interval-timer-in-ms: 30000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
