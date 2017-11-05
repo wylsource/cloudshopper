@@ -1,0 +1,27 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: cloudshopper-zuul
+eureka:
+  # 设置环境标识
+  environment: dev
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${spring.cloud.client.ipAddress}:${server.port}}
+
+zuul:
+  routes:
+    user: # 保持唯一即可
+      path: /user/**
+      serviceId: cloudshopper-user
+    order:
+      path: /order/**
+      serviceId: cloudshopper-order
+    pay:
+      path: /pay/**
+      serviceId: cloudshopper-pay
