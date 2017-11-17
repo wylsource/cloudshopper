@@ -29,6 +29,9 @@
 		<module>cloudshopper-entity</module>
 		<module>cloudshopper-api</module>
 		<module>cloudshopper-zuul</module>
+		<module>cloudshopper-rocketmq</module>
+		<module>cloudshopper-product</module>
+		<module>cloudshopper-fastdfs</module>
 	</modules>
 
 	<properties>

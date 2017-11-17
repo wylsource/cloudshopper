@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.star4j.cloudshopper.mapper.ShopProductSkuMapper">
+  <resultMap id="BaseResultMap" type="org.star4j.cloudshopper.entity.ShopProductSku">
+    <constructor>
+      <arg column="product_sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_spu_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="supplier_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="store_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_sku_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="org.star4j.cloudshopper.entity.ShopProductSku">
+    <constructor>
+      <arg column="product_sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_spu_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="supplier_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="store_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_sku_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="product_sku_pics" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Blob_Column_List">
+    product_sku_pics
+  </sql>
+  <insert id="insert" parameterType="org.star4j.cloudshopper.entity.ShopProductSku">
+    insert into shop_product_sku (product_sku_id, product_spu_id, supplier_id, 
+      store_num, product_sku_price, create_time, 
+      product_sku_pics)
+    values (#{productSkuId,jdbcType=BIGINT}, #{productSpuId,jdbcType=BIGINT}, #{supplierId,jdbcType=BIGINT}, 
+      #{storeNum,jdbcType=INTEGER}, #{productSkuPrice,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{productSkuPics,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.star4j.cloudshopper.entity.ShopProductSku">
+    insert into shop_product_sku
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="productSkuId != null">
+        product_sku_id,
+      </if>
+      <if test="productSpuId != null">
+        product_spu_id,
+      </if>
+      <if test="supplierId != null">
+        supplier_id,
+      </if>
+      <if test="storeNum != null">
+        store_num,
+      </if>
+      <if test="productSkuPrice != null">
+        product_sku_price,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="productSkuPics != null">
+        product_sku_pics,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="productSkuId != null">
+        #{productSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="productSpuId != null">
+        #{productSpuId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="storeNum != null">
+        #{storeNum,jdbcType=INTEGER},
+      </if>
+      <if test="productSkuPrice != null">
+        #{productSkuPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productSkuPics != null">
+        #{productSkuPics,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

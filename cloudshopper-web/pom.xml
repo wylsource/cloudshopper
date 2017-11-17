@@ -32,6 +32,13 @@
 			<version>${org.star4j.cloudshopper}</version>
 		</dependency>
 
+		<!-- 工具类依赖 -->
+		<dependency>
+			<groupId>org.star4j.cloudshopper</groupId>
+			<artifactId>cloudshopper-tools</artifactId>
+			<version>${org.star4j.cloudshopper}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

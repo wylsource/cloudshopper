@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.star4j.cloudshopper.mapper.ShopSpecGroupMapper">
+  <resultMap id="BaseResultMap" type="org.star4j.cloudshopper.entity.ShopSpecGroup">
+    <constructor>
+      <arg column="spec_group_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="spec_group_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cate_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="org.star4j.cloudshopper.entity.ShopSpecGroup">
+    insert into shop_spec_group (spec_group_id, spec_group_name, cate_id
+      )
+    values (#{specGroupId,jdbcType=BIGINT}, #{specGroupName,jdbcType=VARCHAR}, #{cateId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.star4j.cloudshopper.entity.ShopSpecGroup">
+    insert into shop_spec_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="specGroupId != null">
+        spec_group_id,
+      </if>
+      <if test="specGroupName != null">
+        spec_group_name,
+      </if>
+      <if test="cateId != null">
+        cate_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="specGroupId != null">
+        #{specGroupId,jdbcType=BIGINT},
+      </if>
+      <if test="specGroupName != null">
+        #{specGroupName,jdbcType=VARCHAR},
+      </if>
+      <if test="cateId != null">
+        #{cateId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

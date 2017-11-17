@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.star4j.cloudshopper.mapper.ShopProductSpuMapper">
+  <resultMap id="BaseResultMap" type="org.star4j.cloudshopper.entity.ShopProductSpu">
+    <constructor>
+      <arg column="product_spu_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="cate_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_spu_title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_spu_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="product_spu_cover" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="is_sale" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="is_hot" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="is_push" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="sale_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="is_on" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="org.star4j.cloudshopper.entity.ShopProductSpu">
+    insert into shop_product_spu (product_spu_id, cate_id, product_spu_title, 
+      product_spu_price, product_spu_cover, is_sale, 
+      is_hot, is_push, sale_price, 
+      is_on, create_time, product_spu_descr, 
+      product_spu_pics)
+    values (#{productSpuId,jdbcType=BIGINT}, #{cateId,jdbcType=BIGINT}, #{productSpuTitle,jdbcType=VARCHAR}, 
+      #{productSpuPrice,jdbcType=DECIMAL}, #{productSpuCover,jdbcType=VARCHAR}, #{isSale,jdbcType=CHAR}, 
+      #{isHot,jdbcType=CHAR}, #{isPush,jdbcType=CHAR}, #{salePrice,jdbcType=DECIMAL}, 
+      #{isOn,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{productSpuDescr,jdbcType=LONGVARCHAR}, 
+      #{productSpuPics,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.star4j.cloudshopper.entity.ShopProductSpu">
+    insert into shop_product_spu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="productSpuId != null">
+        product_spu_id,
+      </if>
+      <if test="cateId != null">
+        cate_id,
+      </if>
+      <if test="productSpuTitle != null">
+        product_spu_title,
+      </if>
+      <if test="productSpuPrice != null">
+        product_spu_price,
+      </if>
+      <if test="productSpuCover != null">
+        product_spu_cover,
+      </if>
+      <if test="isSale != null">
+        is_sale,
+      </if>
+      <if test="isHot != null">
+        is_hot,
+      </if>
+      <if test="isPush != null">
+        is_push,
+      </if>
+      <if test="salePrice != null">
+        sale_price,
+      </if>
+      <if test="isOn != null">
+        is_on,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="productSpuDescr != null">
+        product_spu_descr,
+      </if>
+      <if test="productSpuPics != null">
+        product_spu_pics,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="productSpuId != null">
+        #{productSpuId,jdbcType=BIGINT},
+      </if>
+      <if test="cateId != null">
+        #{cateId,jdbcType=BIGINT},
+      </if>
+      <if test="productSpuTitle != null">
+        #{productSpuTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="productSpuPrice != null">
+        #{productSpuPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="productSpuCover != null">
+        #{productSpuCover,jdbcType=VARCHAR},
+      </if>
+      <if test="isSale != null">
+        #{isSale,jdbcType=CHAR},
+      </if>
+      <if test="isHot != null">
+        #{isHot,jdbcType=CHAR},
+      </if>
+      <if test="isPush != null">
+        #{isPush,jdbcType=CHAR},
+      </if>
+      <if test="salePrice != null">
+        #{salePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="isOn != null">
+        #{isOn,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="productSpuDescr != null">
+        #{productSpuDescr,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="productSpuPics != null">
+        #{productSpuPics,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

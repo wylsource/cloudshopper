@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.star4j.cloudshopper.api.user.ShopAdminClient;
 import org.star4j.cloudshopper.entity.ShopAdmin;
+import org.star4j.cloudshopper.result.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,8 @@ public class MainController {
     }
 
     @GetMapping("/main/select")
-    public List<ShopAdmin> select(){
-        List<ShopAdmin> shopAdmins = shopAdminClient.selectShopAdminWithPage(12321L);
-        return shopAdmins;
+    public Result select(){
+        Result result = shopAdminClient.selectShopAdminWithPage(12321L);
+        return result;
     }
 }

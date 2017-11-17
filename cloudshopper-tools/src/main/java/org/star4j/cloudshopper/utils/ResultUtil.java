@@ -1,6 +1,6 @@
 package org.star4j.cloudshopper.utils;
 
-import org.star4j.cloudshopper.Enums.ResultState;
+import org.star4j.cloudshopper.enums.ResultState;
 import org.star4j.cloudshopper.result.ListResult;
 import org.star4j.cloudshopper.result.ObjectResult;
 import org.star4j.cloudshopper.result.Result;

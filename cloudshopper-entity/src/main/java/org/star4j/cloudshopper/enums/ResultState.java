@@ -1,4 +1,4 @@
-package org.star4j.cloudshopper.Enums;
+package org.star4j.cloudshopper.enums;
 
 import lombok.Getter;
 
@@ -14,7 +14,9 @@ public enum ResultState {
 
     RESULT_SUCCESS(0, "成功"),
 
-    RESULT_ERROR(1, "系统未知错误");
+    RESULT_ERROR(1, "系统未知错误"),
+
+    RESULT_FALLBACKERROR(1001, "断路器启动调用 FALLBACK");
 
     private Integer code;
 

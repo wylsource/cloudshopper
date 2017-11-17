@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.star4j.cloudshopper.mapper.ShopProductSkuPropertyItemMapper">
+  <resultMap id="BaseResultMap" type="org.star4j.cloudshopper.entity.ShopProductSkuPropertyItem">
+    <constructor>
+      <arg column="product_sku_property_item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="property_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="property_item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_sku_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="org.star4j.cloudshopper.entity.ShopProductSkuPropertyItem">
+    insert into shop_product_sku_property_item (product_sku_property_item_id, property_id, 
+      property_item_id, product_sku_id)
+    values (#{productSkuPropertyItemId,jdbcType=BIGINT}, #{propertyId,jdbcType=BIGINT}, 
+      #{propertyItemId,jdbcType=BIGINT}, #{productSkuId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="org.star4j.cloudshopper.entity.ShopProductSkuPropertyItem">
+    insert into shop_product_sku_property_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="productSkuPropertyItemId != null">
+        product_sku_property_item_id,
+      </if>
+      <if test="propertyId != null">
+        property_id,
+      </if>
+      <if test="propertyItemId != null">
+        property_item_id,
+      </if>
+      <if test="productSkuId != null">
+        product_sku_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="productSkuPropertyItemId != null">
+        #{productSkuPropertyItemId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyId != null">
+        #{propertyId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyItemId != null">
+        #{propertyItemId,jdbcType=BIGINT},
+      </if>
+      <if test="productSkuId != null">
+        #{productSkuId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

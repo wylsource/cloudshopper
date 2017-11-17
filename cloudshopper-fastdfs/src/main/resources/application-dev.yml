@@ -1,0 +1,30 @@
+server:
+  port: 7908
+
+spring:
+  application:
+    name: cloudshopper-fastdfs
+eureka:
+  # 设置环境标识
+  environment: dev
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${spring.cloud.client.ipAddress}:${server.port}}
+fdfs:
+  connect-timeout: 3600
+  thumbImage:      #缩略图生成参数
+    width: 150
+    height: 200
+  tracker-list:    #TrackerList参数,支持多个
+    - 47.93.16.239:22122
+  pool:
+    #从池中借出的对象的最大数目
+    max-total: 153
+    #获取连接时的最大等待毫秒数
+    max-wait-millis: 200
+nginx:
+  ip: 47.93.16.239
+  port: 8888

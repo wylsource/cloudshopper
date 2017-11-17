@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.star4j.cloudshopper.mapper.ShopProductSpuSpecItemMapper">
+  <resultMap id="BaseResultMap" type="org.star4j.cloudshopper.entity.ShopProductSpuSpecItem">
+    <constructor>
+      <arg column="product_spu_spec_item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="product_spu_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="spec_item_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="spec_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="spec_group_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="org.star4j.cloudshopper.entity.ShopProductSpuSpecItem">
+    insert into shop_product_spu_spec_item (product_spu_spec_item_id, product_spu_id, 
+      spec_item_id, spec_id, spec_group_id
+      )
+    values (#{productSpuSpecItemId,jdbcType=BIGINT}, #{productSpuId,jdbcType=BIGINT}, 
+      #{specItemId,jdbcType=BIGINT}, #{specId,jdbcType=BIGINT}, #{specGroupId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.star4j.cloudshopper.entity.ShopProductSpuSpecItem">
+    insert into shop_product_spu_spec_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="productSpuSpecItemId != null">
+        product_spu_spec_item_id,
+      </if>
+      <if test="productSpuId != null">
+        product_spu_id,
+      </if>
+      <if test="specItemId != null">
+        spec_item_id,
+      </if>
+      <if test="specId != null">
+        spec_id,
+      </if>
+      <if test="specGroupId != null">
+        spec_group_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="productSpuSpecItemId != null">
+        #{productSpuSpecItemId,jdbcType=BIGINT},
+      </if>
+      <if test="productSpuId != null">
+        #{productSpuId,jdbcType=BIGINT},
+      </if>
+      <if test="specItemId != null">
+        #{specItemId,jdbcType=BIGINT},
+      </if>
+      <if test="specId != null">
+        #{specId,jdbcType=BIGINT},
+      </if>
+      <if test="specGroupId != null">
+        #{specGroupId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

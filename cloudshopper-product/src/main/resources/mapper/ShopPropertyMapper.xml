@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.star4j.cloudshopper.mapper.ShopPropertyMapper">
+  <resultMap id="BaseResultMap" type="org.star4j.cloudshopper.entity.ShopProperty">
+    <constructor>
+      <arg column="property_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="property_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cate_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="org.star4j.cloudshopper.entity.ShopProperty">
+    insert into shop_property (property_id, property_name, cate_id
+      )
+    values (#{propertyId,jdbcType=BIGINT}, #{propertyName,jdbcType=VARCHAR}, #{cateId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.star4j.cloudshopper.entity.ShopProperty">
+    insert into shop_property
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="propertyId != null">
+        property_id,
+      </if>
+      <if test="propertyName != null">
+        property_name,
+      </if>
+      <if test="cateId != null">
+        cate_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="propertyId != null">
+        #{propertyId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyName != null">
+        #{propertyName,jdbcType=VARCHAR},
+      </if>
+      <if test="cateId != null">
+        #{cateId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

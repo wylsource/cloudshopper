@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>cloudshopper-user</artifactId>
+	<artifactId>cloudshopper-fastdfs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cloudshopper-user</name>
-	<description>this is cloudshopper's user project</description>
+	<name>cloudshopper-fastdfs</name>
+	<description>this is cloudshopper's fastdfs project</description>
 
 	<parent>
 		<groupId>org.star4j.cloudshopper</groupId>
@@ -32,11 +32,18 @@
 			<version>${org.star4j.cloudshopper}</version>
 		</dependency>
 
-		<!-- 工具依赖 -->
+		<!-- 工具类依赖 -->
 		<dependency>
 			<groupId>org.star4j.cloudshopper</groupId>
 			<artifactId>cloudshopper-tools</artifactId>
 			<version>${org.star4j.cloudshopper}</version>
+		</dependency>
+
+		<!-- fastdfs 工具包 -->
+		<dependency>
+			<groupId>com.github.tobato</groupId>
+			<artifactId>fastdfs-client</artifactId>
+			<version>1.25.4-RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -60,31 +67,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>${mybatis-spring-boot}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql}</version>
-		</dependency>
-
-		<!-- 分页插件整合 -->
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>${pagehelper-spring-boot}</version>
-		</dependency>
-
-		<!-- alibaba 的 druid 数据库连接池 整合 spring boot-->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>${druid-spring-boot}</version>
-		</dependency>
 	</dependencies>
 
 	<build>

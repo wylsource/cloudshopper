@@ -5,7 +5,11 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.star4j.cloudshopper.entity.ShopAdmin;
+import org.star4j.cloudshopper.result.Result;
 import org.star4j.cloudshopper.service.ShopAdminService;
+import org.star4j.cloudshopper.utils.GsonUtil;
+import org.star4j.cloudshopper.utils.PageUtil;
+import org.star4j.cloudshopper.utils.ResultUtil;
 
 import java.util.List;
 
@@ -29,11 +33,11 @@ public class ShopAdminController {
     }
 
     @GetMapping("/selectWithPage/{id}")
-    public List<ShopAdmin> selectShopAdminWithPage(@PathVariable("id") Long id){
+    public Result selectShopAdminWithPage(@PathVariable("id") Long id){
         System.out.println("---------id: "+id);
         ShopAdmin shopAdmin = new ShopAdmin();
-        PageHelper.startPage(1, 6);
+        PageHelper.startPage(2, 6);
         Page<ShopAdmin> shopAdmins = shopAdminService.selectAllWithPage(shopAdmin);
-        return shopAdmins.getResult();
+        return ResultUtil.success(PageUtil.PageToPageBean(shopAdmins));
     }
 }

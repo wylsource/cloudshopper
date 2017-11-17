@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
-import org.star4j.cloudshopper.Enums.ResultState;
+import org.star4j.cloudshopper.enums.ResultState;
 import org.star4j.cloudshopper.result.ObjectResult;
 
 @Component
